@@ -28,7 +28,7 @@
 
 ## API
 
-BASE URL: FORTHCOMING
+BASE URL: https://expat-journal.herokuapp.com/
 
 #### Table of Contents
 
