@@ -68,4 +68,19 @@ router.delete("/:id", (req, res) => {
       });
   });
 
+  router.get('/:id/stories', (req, res) => {
+    const { id } = req.params;
+  
+    Stories.findStories(id)
+    .then(stories => {
+      if (stories.length) {
+        res.json(stories);
+      } else {
+        res.status(404).json({ message:  'Could not find stories for given user' })
+      }
+    })
+    .catch(({ name, message ,stack}) =>{res.status(500).json({name, message, stack});
+  });
+  });
+
 module.exports = router;

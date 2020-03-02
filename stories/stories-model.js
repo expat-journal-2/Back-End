@@ -5,7 +5,8 @@ module.exports = {
     getById,
     insert,
     update,
-    remove
+    remove,
+    findStories
   };
   
   function get() {
@@ -35,5 +36,12 @@ module.exports = {
     return db("stories")
       .where("id", id)
       .del();
+  }
+  
+  function findStories(id) {
+    return db("stories")
+      .join("users", "users.id", "stories.user_id")
+      .select("stories.author", "stories.name", "stories.image_URL", "stories.location", "stories.content")
+      .where("user_id", id);
   }
   
