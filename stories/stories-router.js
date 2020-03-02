@@ -1,6 +1,7 @@
 const router = require("express").Router();
 
 const Stories = require("./stories-model.js");
+const restricted = require('../auth/restricted-middleware.js');
 
 router.get("/", (req, res) => {
   Stories.get()
@@ -25,7 +26,7 @@ router.get('/:id', (req, res) => {
     })
   });
 
-router.post('/', (req, res) =>{
+router.post('/', restricted, (req, res) =>{
     const story = req.body
     Stories.insert(story)
     .then(story =>{
@@ -34,7 +35,7 @@ router.post('/', (req, res) =>{
     .catch(err =>{res.status(500).json(err)})
 })
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", restricted, (req, res) => {
     Stories.remove(req.params.id)
       .then(count => {
         if (count > 0) {
@@ -51,7 +52,8 @@ router.delete("/:id", (req, res) => {
         });
       });
   });
-  router.put("/:id", (req, res) => {
+
+router.put("/:id", restricted, (req, res) => {
     Stories.update(req.params.id, req.body)
       .then(story => {
         if (story) {
@@ -68,7 +70,7 @@ router.delete("/:id", (req, res) => {
       });
   });
 
-  router.get('/:id/stories', (req, res) => {
+router.get('/:id/stories', restricted, (req, res) => {
     const { id } = req.params;
   
     Stories.findStories(id)
