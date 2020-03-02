@@ -41,7 +41,7 @@ BASE URL: https://expat-journal.herokuapp.com/
 | &nbsp; |                          |                                                                               |
 | GET    | `/api/stories`           | get all stories                                                               |
 | POST   | `/api/stories`           | create/send a new story; requires authorization                               |
-| GET    |`/api/stories/:id/stories`| get a user's stories                                                          |
+| GET    |`/api/stories/:id/stories`| get a user's stories; requires authorization                                  |
 | PUT    | `/api/stories/:id`       | update user's story; requires authorization                                   |
 | DELETE | `/api/stories/:id`       | delete a user's story; requires authorization                                 |
 
