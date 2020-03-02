@@ -32,18 +32,18 @@ BASE URL: https://expat-journal.herokuapp.com/
 
 #### Table of Contents
 
-| Type   | Path                     | Notes                                                                         | Example                                                    |
-| ------ | ------------------------ | ----------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| POST   | `/api/auth/register`     | register a new user                                                           |                                                            |
-| POST   | `/api/auth/login`        | login a new user                                                              |                                                            |
-| &nbsp; |                          |                                                                               |                                                            |
-| GET    | `/api/users`             | get all users; requires authorization                                         |                                                            |
-| &nbsp; |                          |                                                                               |                                                            |
-| GET    | `/api/stories`           | get all stories                                                               |                                                            |
-| POST   | `/api/stories`           | create/send a new story; requires authorization                             |                                                            |
-| GET    |`/api/stories/:id/stories`       | get a user's stories                                                          |                                                            |
-| PUT    | `/api/stories/:id`       | update user's story; requires authorization                                   |                                                            |
-| DELETE | `/api/stories/:id`       | delete a user's story; requires authorization                                 |                                                            |
+| Type   | Path                     | Notes                                                                         |
+| ------ | ------------------------ | ----------------------------------------------------------------------------- | 
+| POST   | `/api/auth/register`     | register a new user                                                           |
+| POST   | `/api/auth/login`        | login a new user                                                              |
+| &nbsp; |                          |                                                                               |
+| GET    | `/api/users`             | get all users; requires authorization                                         |
+| &nbsp; |                          |                                                                               |
+| GET    | `/api/stories`           | get all stories                                                               |
+| POST   | `/api/stories`           | create/send a new story; requires authorization                               |
+| GET    |`/api/stories/:id/stories`| get a user's stories                                                          |
+| PUT    | `/api/stories/:id`       | update user's story; requires authorization                                   |
+| DELETE | `/api/stories/:id`       | delete a user's story; requires authorization                                 |
 
 
 ## Examples
