@@ -10,9 +10,9 @@ describe("auth router", function() {
       const res = await request(server)
         .post("/api/auth/register")
         .send({
-          username: "testPost4",
-          password: "testPost4",
-          email: "testPost4"
+          username: "testPost79",
+          password: "testPost79",
+          email: "testPost89"
         });
       expect(res.status).toBe(201);
     });
@@ -26,7 +26,7 @@ describe("auth router", function() {
     it("should return 200 logged in", async () => {
       const res = await request(server)
         .post("/api/auth/login")
-        .send({ username: "nicole", password: "nicolepass" });
+        .send({ username: "testPost99", password: "testPost99" });
       expect(res.status).toBe(200);
     });
   });
