@@ -1,4 +1,4 @@
 node_modules
 .env
-*.db3
 test.db3
+expat.db3
