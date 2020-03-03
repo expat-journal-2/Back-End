@@ -1,11 +1,10 @@
 // Update with your config settings.
-require('dotenv').config()
+require("dotenv").config();
 module.exports = {
-
   development: {
-    client: 'sqlite3',
+    client: "sqlite3",
     connection: {
-      filename: './data/expat.db3'
+      filename: "./data/expat.db3"
     },
     migrations: {
       directory: "./data/migrations"
@@ -13,13 +12,14 @@ module.exports = {
     seeds: {
       directory: "./data/seeds"
     },
-    useNullAsDefault:true,
-         pool: {
-            afterCreate: (conn, done) => {
-              conn.run('PRAGMA foreign_keys = ON', done);  }
-          }
+    useNullAsDefault: true,
+    pool: {
+      afterCreate: (conn, done) => {
+        conn.run("PRAGMA foreign_keys = ON", done);
+      }
+    }
   },
-  
+
   testing: {
     client: "sqlite3",
     connection: {
@@ -35,35 +35,38 @@ module.exports = {
   },
 
   staging: {
-    client: 'postgresql',
+    client: "postgresql",
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: "my_db",
+      user: "username",
+      password: "password"
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: "knex_migrations"
     }
   },
 
   production: {
-    client: 'pg',
+    client: "pg",
     connection: {
-      database: process.env.DB_URL,
-      user:     'username',
-      password: 'password'
+      database: process.env.DATABASE_URL,
+      user: "username",
+      password: "password"
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: "knex_migrations",
+      directory: "./data/migrations"
+    },
+    seeds: {
+      directory: "./data/seeds"
     }
   }
-
 };
