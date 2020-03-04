@@ -7,17 +7,18 @@ module.exports = {
       filename: "./data/expat.db3"
     },
     migrations: {
+      tableName: "knex_migrations",
       directory: "./data/migrations"
     },
     seeds: {
       directory: "./data/seeds"
     },
-    useNullAsDefault: true,
-    pool: {
-      afterCreate: (conn, done) => {
-        conn.run("PRAGMA foreign_keys = ON", done);
-      }
-    }
+    useNullAsDefault: true
+    // pool: {
+    //   afterCreate: (conn, done) => {
+    //     conn.run("PRAGMA foreign_keys = ON", done);
+    //   }
+    // }
   },
 
   testing: {
@@ -52,17 +53,14 @@ module.exports = {
 
   production: {
     client: "pg",
-    connection: {
-      database: process.env.DATABASE_URL,
-      user: "username",
-      password: "password"
-    },
+    connection: process.env.DATABASE_URL,
+    // user: "username",
+    // password: "password"
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: "knex_migrations",
       directory: "./data/migrations"
     },
     seeds: {
