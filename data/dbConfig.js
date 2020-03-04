@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 const knex = require("knex")("production");
 const config = require("../knexfile");
 
