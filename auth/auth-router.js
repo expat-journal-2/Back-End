@@ -15,8 +15,8 @@ router.post("/register", (req, res) => {
   console.log(user);
   Users.add(user)
     .then(saved => {
-      console.log(saved)
-      res.status(201).json(saved);
+      console.log('this',saved)
+      res.status(201).json({message:"user added"});
     })
     .catch(err => {
       res.status(500).json({error:"error"});

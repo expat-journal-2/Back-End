@@ -10,9 +10,9 @@ const storiesRouter = require('../stories/stories-router.js');
 
 const server = express();
 
-server.use(express.json());
 server.use(morgan("dev"));
 server.use(helmet());
+server.use(express.json());
 server.use(cors());
 
 server.use("/api/auth", authRouter);
