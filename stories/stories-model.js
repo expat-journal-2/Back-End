@@ -23,7 +23,7 @@ module.exports = {
     return db('stories')
       .insert(story)
       .then(ids => {
-        return getById(ids[0]);
+        return ids;
       });
   }
 

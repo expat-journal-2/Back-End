@@ -1,7 +1,7 @@
 /* jshint esversion: 6 */
 const request = require("supertest");
 const server = require("../api/server.js");
-const test = "newTestValue12"
+const test = "newValue1"
 describe("auth router", function() {
   it("should run the tests", function() {
     expect(true).toBe(true);
