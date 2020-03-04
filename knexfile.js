@@ -2,22 +2,21 @@
 require("dotenv").config();
 module.exports = {
   development: {
-    client: "sqlite3",
+    client: 'pg',
+    useNullAsDefault: true,
+    
     connection: {
-      filename: "./data/expat.db3"
+      host: '127.0.0.1',
+      port: '5555',
+      user: 'postgres',
+      password:process.env.PASS,
+      database: 'Journals'
     },
     migrations: {
-      tableName: "knex_migrations",
-      directory: "./data/migrations"
+      directory: './data/migrations'
     },
     seeds: {
-      directory: "./data/seeds"
-    },
-    useNullAsDefault: true,
-    pool: {
-      afterCreate: (conn, done) => {
-        conn.run("PRAGMA foreign_keys = ON", done);
-      }
+      directory: './data/seeds'
     }
   },
 
