@@ -56,10 +56,10 @@ module.exports = {
     connection: process.env.DATABASE_URL,
     // user: "username",
     // password: "password"
-    pool: {
-      min: 2,
-      max: 10
-    },
+    // pool: {
+    //   min: 2,
+    //   max: 10
+    // },
     migrations: {
       directory: "./data/migrations"
     },
